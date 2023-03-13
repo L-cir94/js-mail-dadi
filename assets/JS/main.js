@@ -4,13 +4,11 @@ può accedere, stampa un messaggio appropriato sull’esito del controllo.
 Mail Bonus
 Usiamo un input e un bottone per inserire la mail e poi mostriamo i risultati
 in pagina.
-
 */
-
 /* strumenti
 
 */
-/* //crea lista di chi può accedere
+//crea lista di chi può accedere
  const userList =[
   'luca.cirigliano@gmail.com',
   'mimmo@gmail.com',
@@ -20,8 +18,8 @@ in pagina.
 ]
 //chiedi utente la sua email
 //const userMail = prompt('inserisci la tua email')//per es normale 
-const userMail =document.getElementById("mail");//per bonus
-const access = document.querySelector("div")
+const userMail = document.getElementById("mail");//per bonus
+const access = document.getElementById("access")
 const button = document.querySelector('button');
 button.addEventListener('click', function(){
   let inputUserMail = userMail.value
@@ -38,19 +36,27 @@ console.log('accesso negato')
 //stampa un messaggio su HTML
 access.innerHTML = 'Accesso non consentito'
 }
-}) */
-
-
+})
 /* (2)Gioco dei dadi
 Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
 Stabilire il vincitore, in base a chi fa il punteggio più alto.
 Prima di partire a scrivere codice poniamoci qualche domanda:
 Che ci sia un array da qualche parte?
-Se dobbiamo confrontare qualcosa che "cosa" ci serve? */
-
-
+Se dobbiamo confrontare qualcosa che "cosa" ci serve?
+*/
 //Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
-let numberPc = Math.floor(Math.random() * 6 ) + 1;
-let numbeUser = Math.floor(Math.random() * 6 ) + 1
-console.log(`numero pc ${numberPc} numero utente ${numbeUser}`)
+let numberPc = Math.floor(Math.random() * 6) + 1;
+let numberUser = Math.floor(Math.random() * 6) + 1;
+console.log(`numero utente ${numberUser} numero pc ${numberPc} `)
+const diceEl = document.getElementById("computersays")
 //Stabilire il vincitore, in base a chi fa il punteggio più alto.
+if (numberUser > numberPc) {
+    console.log("hai vinto")
+    diceEl.innerHTML = `${numberPc} pc ${numberUser} il tuo numero <br> hai vinto`
+} else if (numberUser == numberPc) {
+    console.log("hai pareggiato") 
+    diceEl.innerHTML =`${numberPc} pc ${numberUser} il tuo numero <br> hai pareggiato`
+} else {
+    console.log("hai perso");
+    diceEl.innerHTML =`${numberPc} pc ${numberUser} il tuo numero <br> hai perso`
+}
