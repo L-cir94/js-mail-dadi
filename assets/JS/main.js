@@ -24,14 +24,16 @@ const button = document.querySelector('button');
 button.addEventListener('click', function(){
   let inputUserMail = userMail.value
   console.log(inputUserMail);
+  let hasaccess = false
   for (let i = 0; i < userList.length; i++)
 //controlla che sia nella lista delgi ammessi 
 if (inputUserMail == userList[i]){
   console.log('accesso consentito')
   i = userList.length;
-//stampa un messaggio su HTML
-  access.innerHTML = 'Accesso consentito'
-}else {
+  hasaccess =true}
+  if (hasaccess){
+    access.innerHTML = 'Accesso consentito'
+  }else {
 console.log('accesso negato')
 //stampa un messaggio su HTML
 access.innerHTML = 'Accesso non consentito'
@@ -52,11 +54,11 @@ const diceEl = document.getElementById("computersays")
 //Stabilire il vincitore, in base a chi fa il punteggio più alto.
 if (numberUser > numberPc) {
     console.log("hai vinto")
-    diceEl.innerHTML = `${numberPc} pc ${numberUser} il tuo numero <br> hai vinto`
+    diceEl.innerHTML = `${numberPc}<--pc<br> ${numberUser}<--il tuo numero <br> hai vinto`
 } else if (numberUser == numberPc) {
     console.log("hai pareggiato") 
-    diceEl.innerHTML =`${numberPc} pc ${numberUser} il tuo numero <br> hai pareggiato`
+    diceEl.innerHTML =`${numberPc}<--pc<br> ${numberUser}<--il tuo numero <br> hai pareggiato`
 } else {
     console.log("hai perso");
-    diceEl.innerHTML =`${numberPc} pc ${numberUser} il tuo numero <br> hai perso`
+    diceEl.innerHTML =`${numberPc}<--pc<br> ${numberUser}<--il tuo numero <br> hai perso`
 }
