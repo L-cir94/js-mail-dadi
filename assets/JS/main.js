@@ -21,13 +21,20 @@ programma così come lo faremmo "a mano" */
 /* strumenti
 
 */
+//crea lista di chi può accedere
+ const userList =[
+  'luca.cirigliano@gmail.com',
+  'mimmo@gmail.com',
+  'pippo@gmail.com'
+
+]
 
 //chiedi utente la sua email
 //const userMail = prompt('inserisci la tua email')//per es normale 
 
-const userMail =document.getElementById("mail");//per bonus
-console.log(userMail);
 
+
+//creza lista di chi può accedere
 
 
 const button = document.querySelector('button');
@@ -35,8 +42,13 @@ button.addEventListener('click', function(){
   let inputUserMail = userMail.value
   console.log(inputUserMail)
 })
+const userMail =document.getElementById("mail");//per bonus
+console.log(userMail);
+
+
 
 
 
 //controlla che sia nella lista delgi ammessi 
+
 //stampa un messaggio su HTML
