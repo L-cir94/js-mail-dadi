@@ -25,10 +25,16 @@ programma così come lo faremmo "a mano" */
 //chiedi utente la sua email
 //const userMail = prompt('inserisci la tua email')//per es normale 
 
-const userMail =document.getElementById("mail")//per bonus
-console.log(userMail)
+const userMail =document.getElementById("mail");//per bonus
+console.log(userMail);
 
 
+
+const button = document.querySelector('button');
+button.addEventListener('click', function(){
+  let inputUserMail = userMail.value
+  console.log(inputUserMail)
+})
 
 
 
