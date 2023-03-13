@@ -25,30 +25,30 @@ programma così come lo faremmo "a mano" */
  const userList =[
   'luca.cirigliano@gmail.com',
   'mimmo@gmail.com',
-  'pippo@gmail.com'
-
+  'pippo@gmail.com',
+  'mamma@gmail.com',
+  'riccio@gmail.com'
 ]
 
 //chiedi utente la sua email
 //const userMail = prompt('inserisci la tua email')//per es normale 
-
-
-
-//creza lista di chi può accedere
-
-
+const userMail =document.getElementById("mail");//per bonus
+const access = document.querySelector("div")
 const button = document.querySelector('button');
 button.addEventListener('click', function(){
   let inputUserMail = userMail.value
-  console.log(inputUserMail)
-})
-const userMail =document.getElementById("mail");//per bonus
-console.log(userMail);
-
-
-
-
-
+  console.log(inputUserMail);
+  for (let i = 0; i < userList.length; i++)
 //controlla che sia nella lista delgi ammessi 
+if (inputUserMail == userList[i]){
+  console.log('accesso consentito')
+  i = userList.length;
+  access.innerHTML = 'Accesso consentito'
+}else {
+console.log('accesso negato')
+access.innerHTML = 'Accesso non consentito'
+}
+})
 
+console.log(userMail);
 //stampa un messaggio su HTML
